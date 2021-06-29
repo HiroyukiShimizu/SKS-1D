@@ -14,4 +14,4 @@ Installation and Test
     $ make
 (3) Test
     $ cd Benchmark
-    $ sh Allrun
+    $ sh Allrun.sh

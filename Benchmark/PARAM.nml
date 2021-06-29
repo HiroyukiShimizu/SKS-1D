@@ -1,0 +1,99 @@
+&common_list
+ output_type             = 0,       ! 0:normal; 1:TEST(time step n=0-10)
+ output_term             = 0,       ! 0:No; 1:Yes
+ output_point            = 1,       ! 0:No; 1:Yes
+ non_dim_output          = 0,       ! 0:dim; 1:non-dim
+ configuration_type      = 1,       ! 1:1D channel; 2:Axisymmetric
+ flux_type               = 1,       ! 1:HLL; 2:HLLC
+ Cd_type                 = 0,       ! 0:directly given; 1:Hager(88)
+ u0h0_type               = 2,       ! 1:from M_dot_0 and Ri_0; 2:directly given
+ x0_type                 = 0,       ! 0:x_0 given; 1:H/x0 given; 2:h0/x0 given
+ mx                      = 20000,   ! cell numbers of all physical domain [-]
+ msource                 = 200,     ! cell numbers of source domain [-]
+ left_boundary_point     = 0.d0,    ! Point at left boundary of numerical domain [m or -]
+ !*** ONLY x0_type=0 ***
+   x_0                   = 2.d0,    ! distance of initial physical domain [m or -]
+   !*** ONLY configuration_type=1 ***
+     y_0                 = 0.5d0,   ! channel width [m or -]
+ !*** ONLY x0_type=1 or 2 ***
+   H_x0                  = 0.d0,    ! H_char/x_0 [-]
+   h0_x0                 = 0.d0,    ! h_0/x_0 [-]
+   !*** ONLY configuration_type=1 ***
+     y0_x0               = 0.d0,    ! y_0/x_0 [-] 
+ !**********************
+ tfinal                  = 10.d0,   ! final time [s or -]
+ dt_out                  = 5.d-2,   ! time step of output [s or -]
+ dt_out_front            = 5.d-2,   ! time step of output of front [s or -]
+ supply_time             = 4.d0,    ! [s or -]
+ cfl                     = 7.d-1,   ! Courant number [-]
+ grav                    = 9.81d0,  ! gravitational accerelation [m/s^2]
+ theta_slope             = 6.d0,    ! slope angle [degree]
+ slope_distance          = 11.68d0, ! distance of slope [m or -]
+ x_output_1              = 4.65d0,  ! Point of output [m or -]
+ x_output_2              = 9.78d0,  ! Point of output [m or -]
+ x_output_3              = 16.68d0, ! Point of output [m or -]
+ x_output_4              = 20.38d0, ! Point of output [m or -]
+ rho_s                   = 2177.d0, ! particle density [kg/m^3]
+ p_a0                    = 1.013d5, ! ambient pressure [Pa]
+ T_a                     = 284.d0,  ! air temperature [K]
+ R_a                     = 287.d0,  ! gas constant of air [J/(kg K)]
+ R_v                     = 462.d0,  ! gas constant of volcanic gas [J/(kgK)]
+ C_s                     = 1100.d0, ! specific heat of particle [J/(kg K)]
+ C_pa                    = 1004.d0, ! specific heat of air at constant pressure [J/(kgK)]
+ C_pv                    = 1810.d0, ! specific heat of volcanic gas at constant pressure [J/(kgK)]
+ rho_w                   = 1.d3,    ! water density [kg/m^3]
+ T_w                     = 273.d0,  ! water temperature [K]
+ C_pw                    = 4187.d0, ! specific heat of water at constant pressure [J/(kgK)]
+ T_l                     = 400.d0,  ! lithic temperature [K]
+ steady_criteria         = 5.d-2    ! non-dim steady criteria velocity [-]
+/
+
+&dilute_list
+ FC_type                 = 1,       ! 1:NOT-kinematic; 2:NOT-momentum; 3:1(-->2)
+ thermal_type            = 2,       ! 0:NOT; 1:YES(de=CvdT); 2:YES(de=d(CvT))
+ entrainment_type        = 1,       ! 0:NO; 1:P; 2:T; 3:JH
+ !*** ONLY entrainment_type/=0 .and. thermal_type/=0 ***
+   ent_mechanic_type     = 0,       ! 0:considering; 1:NO considering
+ !**********************
+ Ws_type                 = 3,       ! 1:B&W(d); 2:Doyle(d); 3:Ws_directly
+ geometry_type           = 1,       ! 0:NO; 1:YES
+ potential_type          = 0,       ! 0:considering; 1:NO considering; 2:No(Particle&Ent); 3No considering(B&W)
+ tau_c_type              = 1,       ! 1:relative velocity(u-uH); 2:absolute velocity(u)
+ n_s0                    = 0.4617d0,
+ n_a0                    = 0.5383d0,
+ T_0                     = 292.29d0,
+ cfl_FC                  = 1.d0,    ! Courant number at FC [-]
+ Fr_N0                   = 1.41421356d0,  ! Imposed frontal Froude number [-]
+ !*** ONLY Ws_type=3 ***
+   Ws_directly             = 0.7439d0,! dim particle-settling velocity [m/s]
+ !*** ONLY Ws_type=1&2 ***
+   diameter                = 0.d0,    ! particle diameter [m]
+ !*** ONLY Cd_type=0 ***
+   C_dc                  = 1.d-3,   ! coefficient of Chezy drag [-]
+ !*** ONLY u0ho_type=2 ***
+   h_0                   = 1.265d0, ! source thickness [m]
+   u_0                   = 4.8d0,  ! source velocity [m/s]
+ !*** ONLY u0h0_type=1 ***
+   M_dot_0               = 0.d0,    ! mass flux [kg/s] (source_m_or_0=2)
+   Ri_0                  = 0.d0     ! Richardson number [-]
+/
+
+&dense_list
+ no_dense_layer          = 0,       ! 0:NO(2-layer); 1:YES(1-layer dilute)
+ !*** ONLY no_dense_layer = 0 ***
+  D_type                 = 1,       ! 0:D_Ws; 1:D_directly
+  basal_resistance_type  = 2,       ! 0:No; 1:Coulomb friction; 2:Chezy drag
+  pressure_gradient_type = 1,       ! 0:NO; 1:YES
+  particle_momentum_type = 0,       ! 0:momentum is supplied; 1:momentum is not supplied
+  eps                    = 1.d-10,  ! artificial bed thickness (AB model) [-]
+  delta                  = 0.d0,    ! angle of dynamic friction [degree]
+  D_Ws                   = 0.d0,   ! non-dim sedimentation rate [-]
+  D_directly             = 3.5d-4,    ! deposition speed [m/s]
+  phi_sH                 = 0.02d0,   ! volume fraction of particle in dense layer [-]
+  phi_sD                 = 6.d-1,   ! volume fraction of particle in deposit [-]
+  h_H0                   = 0.01d0,  ! Initial thickness of dense layer [m]
+  u_H0                   = 2.78d0,  ! Initial velocity of dense layer [m/s]
+  !*** ONLY Cd_type=0 ***
+  C_db                   = 2.5d-3   ! coefficient of basal Chezy drag [-]
+/
+

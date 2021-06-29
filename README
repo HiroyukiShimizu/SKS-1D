@@ -10,7 +10,7 @@ The development of SKS-1D has been partially funded by KAKENHI Grant Numbers JP1
 
 Installation and Test
 (1) Installing gfortran, lapack, blas, and gnuplot
-(2) Compiling using Makefile
+(2) Compiling SKS-1D by Makefile
     $ make
 (3) Test
     $ cd Benchmark

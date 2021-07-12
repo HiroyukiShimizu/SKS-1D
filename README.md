@@ -8,8 +8,10 @@ Hiroyuki A. Shimizu (NIED), Takehiro Koyaguchi (ERI, UTokyo), Yujiro J. Suzuki (
 
 ### Installation and Test
 (1) Installing gfortran, lapack, blas, and gnuplot
+
 (2) Compiling SKS-1D:1.0 by Makefile
     $ make
+
 (3) Test
     $ cd Benchmark
     $ sh Allrun.sh

@@ -1,5 +1,5 @@
 # SKS-1D
-SKS-1D is a Fortran90 code designed to solve the equations for a 1-D two-layer depth-averaged model of pyroclastic density currents [1][2].
+SKS-1D is a Fortran90 code designed to solve the equations for a 1-D two-layer depth-averaged model of pyroclastic density currents [1] [2].
 
 
 ### Authors
@@ -15,7 +15,7 @@ Hiroyuki A. Shimizu (NIED), Takehiro Koyaguchi (ERI, UTokyo), Yujiro J. Suzuki (
 
 (3) Test
 
-    $ cd Benchmark
+    $ cd Benchmark_dilute-PDC
     $ sh Allrun.sh
 
 

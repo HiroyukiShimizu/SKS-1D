@@ -94,6 +94,6 @@
   h_H0                   = 0.015d0,  ! Initial thickness of dense layer [m]
   u_H0                   = 3.d0,  ! Initial velocity of dense layer [m/s]
   !*** ONLY Cd_type=0 ***
-  C_db                   = 2.5d-3   ! coefficient of basal Chezy drag [-]
+  C_db                   = 2.2d-3   ! coefficient of basal Chezy drag [-]
 /
 

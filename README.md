@@ -26,4 +26,4 @@ The development of SKS-1D:1.0 has been partially funded by KAKENHI Grant Numbers
 ### References
 [1] Shimizu H.A., Koyaguchi T., Suzuki Y.J. (2019) The run-out distance of large-scale pyroclastic density currents: A two-layer depth-averaged model. J. Volcanol. Geotherm. Res., 381, 168-184. https://doi.org/10.1016/j.jvolgeores.2019.03.013
 
-[2] Shimizu H.A., Koyaguchi T., Suzuki Y.J., Brosch E., Lube G., Cerminara M. (2021) Validation of a two-layer depth-averaged model by comparison with an experimental dilute stratified pyroclastic density current. Bull. Volcanol. https://doi.org/10.1007/s00445-021-01493-w
+[2] Shimizu H.A., Koyaguchi T., Suzuki Y.J., Brosch E., Lube G., Cerminara M. (2021) Validation of a two-layer depth-averaged model by comparison with an experimental dilute stratified pyroclastic density current. Bull. Volcanol., 83, 73. https://doi.org/10.1007/s00445-021-01493-w

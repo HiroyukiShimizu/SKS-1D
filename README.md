@@ -13,9 +13,14 @@ Hiroyuki A. Shimizu (NIED), Takehiro Koyaguchi (ERI, UTokyo), Yujiro J. Suzuki (
 
     $ make
 
-(3) Test
+(3) Test 1
 
     $ cd Benchmark_dilute-PDC
+    $ sh Allrun.sh
+
+(4) Test 2
+
+    $ cd Large-scale_PDC
     $ sh Allrun.sh
 
 

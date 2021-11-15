@@ -7,7 +7,7 @@ Hiroyuki A. Shimizu (NIED), Takehiro Koyaguchi (ERI, UTokyo), Yujiro J. Suzuki (
 
 
 ### Installation and Test
-(1) Installing gfortran, lapack, blas, and gnuplot
+(1) Installing gfortran, lapack, blas, gnuplot, and ImageMagick
 
 (2) Compiling SKS-1D by Makefile
 
